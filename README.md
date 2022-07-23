@@ -1,5 +1,5 @@
 # My Reads App
 
-simple react app that keep track of your book readings
+A simple, React app that keeps track of your book readings.
 
 ![screenshot](screenshot.jpg)
