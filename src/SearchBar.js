@@ -18,9 +18,10 @@ const SearchBar = ({ updateShelf, allBooks }) => {
         } else {
           if (active) {
             setBooks(
-              res.filter((book) => {
-                return book.imageLinks;
-              })
+              res
+              // res.filter((book) => {
+              //   return book.imageLinks;
+              // })
             );
           }
         }

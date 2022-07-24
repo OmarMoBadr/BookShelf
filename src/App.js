@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import Shelf from "./Shelf";
 import SearchBar from "./SearchBar";
+import NotFound from "./NotFound";
 import * as BooksAPI from "./BooksAPI";
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
   return (
     <div className="app">
       <Routes>
+        <Route path="*" element={<NotFound />} />
         <Route
           path="/search"
           element={<SearchBar updateShelf={updateShelf} allBooks={books} />}

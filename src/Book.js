@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const Book = ({ book, updateShelf, shelf, highlight }) => {
   return (
     <li>
@@ -8,7 +10,9 @@ const Book = ({ book, updateShelf, shelf, highlight }) => {
             style={{
               width: 150,
               height: 230,
-              backgroundImage: `url(${book.imageLinks.thumbnail})`,
+              backgroundImage: `url(${
+                book.imageLinks && book.imageLinks.thumbnail
+              })`,
             }}
           ></div>
           <div className={`book-shelf-changer ${highlight ? "highlight" : ""}`}>
@@ -28,11 +32,18 @@ const Book = ({ book, updateShelf, shelf, highlight }) => {
         </div>
         <div className="book-title">{book.title}</div>
         <div className="book-authors">
-          {book.authors ? book.authors : "unkown"}
+          {book.authors && book.authors.join(", ")}
         </div>
       </div>
     </li>
   );
+};
+
+Book.propTypes = {
+  book: PropTypes.object.isRequired,
+  updateShelf: PropTypes.func.isRequired,
+  shelf: PropTypes.string,
+  highlight: PropTypes.bool,
 };
 
 export default Book;

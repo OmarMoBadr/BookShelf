@@ -242,3 +242,14 @@ input {
 .highlight {
   background-image: url(./icons/check.png);
 }
+
+.not-found {
+  background-image: url(./icons/404.png);
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 3px solid green; */
+}
